@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewData["Title"] = "Departments";
+    Layout = "~/Views/AdminLTELayout/MainLayout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Departments DataTables</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">DataTables</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">DataTable with default features</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="Tbl_Departments" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nomor</th>
+                                    <th>Nama Departemen</th>
+                                    <th>Aksi-aksi</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<div class="modal fade" id="departmentModal" tabindex="-1" aria-labelledby="departmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="departmentModalLabel">Department Modal</h5>
+                @*<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>*@
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Nama Departemen:</label>
+                        <input type="text" class="form-control" id="name">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="insertBtn1" type="button" class="btn btn-primary">Insert</button>
+                <button id="updateBtn1" type="button" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section script{
+    <!-- Page specific script -->
+    @*<script>
+      $(function () {
+        $("#Tbl_Departments").DataTable({
+          "responsive": true, "lengthChange": false, "autoWidth": false,
+          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      });
+    </script>*@
+    <script src="~/js/Departments.js"></script>
+}
